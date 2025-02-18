@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  watcher
+  # namespace: watcher
+  labels:
+    app:  watcher
+spec:
+  selector:
+    matchLabels:
+      app: watcher
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  watcher
+    spec:
+      containers:
+      - name:  watcher
+        image: blank
+        envFrom:
+        - secretRef:
+            name:  watcher
+        ports:
+        - containerPort: 3000 
+          name:  watcher
+      restartPolicy: Always

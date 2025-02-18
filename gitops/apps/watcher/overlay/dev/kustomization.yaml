@@ -1,0 +1,20 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: arbitrar
+namespace: dev
+images:
+  - name: blank
+    newName: ksuphaky/watcher
+    newTag: main # will update by build agent
+
+
+generatorOptions:
+  annotations:
+    sealedsecrets.bitnami.com/managed: "true"
+    sealedsecrets.bitnami.com/namespace-wide: "true"
+  
+resources:
+  - ./namespace.yaml
+  - ../../base
