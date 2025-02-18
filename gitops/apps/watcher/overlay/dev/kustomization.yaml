@@ -9,12 +9,7 @@ images:
     newName: ksuphaky/watcher
     newTag: main # will update by build agent
 
-
-generatorOptions:
-  annotations:
-    sealedsecrets.bitnami.com/managed: "true"
-    sealedsecrets.bitnami.com/namespace-wide: "true"
-  
 resources:
   - ./namespace.yaml
   - ../../base
+  - ./sealed-secret.yaml
