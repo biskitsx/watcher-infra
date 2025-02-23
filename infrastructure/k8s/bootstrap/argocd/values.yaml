@@ -1,0 +1,6 @@
+server:
+  insecure: true
+# ingress:
+#   enabled: true
+#   controller: generic
+#   ingressClassName: "nginx"

@@ -24,6 +24,15 @@ module "subnets" {
     project_id = local.project_id
 }
 
+
+module "nat" {
+    source = "../../modules/network/nat"
+    region = local.region
+    vpc_id = module.vpc.vpc_id
+    project_id = local.project_id
+    subnet_private_self_link = module.subnets.subnet_private_self_link    
+}
+
 module "firewall" {
     source = "../../modules/network/firewall"
     vpc_id = module.vpc.vpc_id

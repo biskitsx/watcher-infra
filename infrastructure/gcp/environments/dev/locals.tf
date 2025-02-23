@@ -1,5 +1,5 @@
 locals {
-  project_id = "fiery-pipe-450205-q3"
+  project_id = "infrastructure-watcher"
   region = "asia-southeast1"
   apis = [
     "compute.googleapis.com",

@@ -10,6 +10,6 @@ images:
     newTag: main # will update by build agent
 
 resources:
+  - ./sealed-secret.yaml
   - ./namespace.yaml
   - ../../base
-  - ./sealed-secret.yaml

@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: watcher
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:biskitsx/watcher-infra.git   # Replace with your repo
+    path: gitops/apps/watcher/overlays/dev  # Path to your overlay
+    targetRevision: HEAD
+    # kustomize:
+      # version: v5.0.1  # Specify kustomize version
+      # Add any kustomize-specific settings if needed
+      # images:
+      #   - name: watcher
+      #     newTag: v1.0.0
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: watcher
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: 3
+      backoff:
+        duration: 5s
+        maxDuration: 1m0s
+        factor: 2

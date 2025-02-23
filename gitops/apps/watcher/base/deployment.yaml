@@ -3,7 +3,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name:  watcher
-  # namespace: watcher
   labels:
     app:  watcher
 spec:
@@ -19,14 +18,14 @@ spec:
   template:
     metadata:
       labels:
-        app:  watcher
+        app: watcher
     spec:
       containers:
-      - name:  watcher
+      - name: watcher
         image: blank
         envFrom:
-        - secretRef:
-            name:  watcher
+          - secretRef:
+              name:  watcher
         ports:
         - containerPort: 3000 
           name:  watcher

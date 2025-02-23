@@ -1,5 +1,5 @@
 resource "google_container_cluster" "gke" {
-    name = "demo"
+    name = "watcher-gke"
     location = var.location
     remove_default_node_pool = true
     initial_node_count = 1
@@ -7,7 +7,6 @@ resource "google_container_cluster" "gke" {
     subnetwork = var.subnet_private_self_link
     networking_mode = "VPC_NATIVE"
     project = var.project_id
-
     deletion_protection = false
 
     addons_config {
