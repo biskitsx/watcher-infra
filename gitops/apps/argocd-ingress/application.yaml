@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:biskitsx/watcher-infra.git   # Replace with your repo
+    repoURL: https://github.com/biskitsx/watcher-infra.git
     path: gitops/apps/argocd-ingress/manifest  # Path to your overlay
     targetRevision: HEAD
     # kustomize:

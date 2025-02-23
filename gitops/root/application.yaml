@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:biskitsx/watcher-infra.git 
+    repoURL: https://github.com/biskitsx/watcher-infra.git
     targetRevision: HEAD
     path: gitops/apps  # Points to the directory containing child applications
   destination:
