@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:biskitsx/watcher-infra.git   # Replace with your repo
-    path: gitops/apps/watcher/overlays/dev  # Path to your overlay
+    repoURL: https://github.com/biskitsx/watcher-infra.git
+    path: gitops/apps/watcher/overlay/dev  # Path to your overlay
     targetRevision: HEAD
     # kustomize:
       # version: v5.0.1  # Specify kustomize version
@@ -22,8 +22,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
     retry:
       limit: 3
       backoff:
