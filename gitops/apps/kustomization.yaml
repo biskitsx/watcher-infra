@@ -4,4 +4,4 @@ resources:
   - ingress/application.yaml
   - sealed-secrets/application.yaml
   - watcher/application.yaml
-  - argocd-ingress/application.yaml
+  # - argocd-ingress/application.yaml
