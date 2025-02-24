@@ -19,7 +19,7 @@ spec:
       #     newTag: v1.0.0
   destination:
     server: https://kubernetes.default.svc
-    namespace: watcher
+    namespace: dev
   syncPolicy:
     automated:
       prune: true
