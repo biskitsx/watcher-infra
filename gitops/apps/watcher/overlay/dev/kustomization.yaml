@@ -7,9 +7,13 @@ namespace: dev
 images:
   - name: blank
     newName: ksuphaky/watcher
-    newTag: main # will update by build agent
+    newTag: main
+  - name: model-img
+    newName: sstepz/watcher-rec
+    newTag: v5
 
 resources:
   - ./sealed-secret.yaml
+  - ./sealed-secret-model.yaml
   - ./namespace.yaml
   - ../../base

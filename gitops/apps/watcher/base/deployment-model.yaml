@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  model
+  labels:
+    app:  model
+spec:
+  selector:
+    matchLabels:
+      app: model
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: model
+    spec:
+      containers:
+      - name: model
+        image: model-img
+        envFrom:
+          - secretRef:
+              name:  model
+        ports:
+        - containerPort: 80 
+          name:  model
+      restartPolicy: Always
