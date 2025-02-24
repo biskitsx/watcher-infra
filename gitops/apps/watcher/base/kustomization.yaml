@@ -13,8 +13,8 @@ commonLabels:
 resources: 
 - ./deployment.yaml
 - ./service.yaml
-- ./deployment-model.yaml
-- ./service-model.yaml
+# - ./deployment-model.yaml
+# - ./service-model.yaml
 - ./ingress.yaml
 
 

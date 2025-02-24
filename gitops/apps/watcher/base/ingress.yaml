@@ -1,13 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: cluster-ingress
+  name: watcher 
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: watcher.suphakit.xyz
+    http:
       paths:
       - path: /
         pathType: Prefix
