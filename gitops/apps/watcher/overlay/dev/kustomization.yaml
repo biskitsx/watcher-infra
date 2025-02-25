@@ -7,7 +7,7 @@ namespace: dev
 images:
   - name: blank
     newName: ksuphaky/watcher
-    newTag: pr-37
+    newTag: {{ steps.meta.outputs.tags }}
   - name: model-img
     newName: sstepz/watcher-rec
     newTag: v5
