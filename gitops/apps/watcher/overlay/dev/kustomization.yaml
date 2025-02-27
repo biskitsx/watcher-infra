@@ -7,7 +7,7 @@ namespace: dev
 images:
   - name: blank
     newName: ksuphaky/watcher
-    newTag: 1b47da1ff5c18cc17ab97ddf173c672c12e8181e
+    newTag: 3c2bfffd9cd849b1cfbacc8d519ee7a932a94ac1
   - name: model-img
     newName: sstepz/watcher-rec
     newTag: v5
